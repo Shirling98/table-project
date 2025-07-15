@@ -1,0 +1,30 @@
+<p-card class="h-1rem">
+    <div class="flex justify-content-center">
+        <p-inputNumber 
+            class="p-3"
+            placeholder="Введите номер заказа"
+            inputId="integeronly"
+            [(ngModel)]="orderNumber"
+            [useGrouping]="false" 
+            /> 
+    <p-treeSelect
+            class="md:w-20rem w-full p-3" 
+            containerStyleClass="w-full" 
+            [options]="orderTypes" 
+            placeholder="Тип заказа" />
+    <p-toggleButton 
+            class="p-3"
+            onLabel="Активный заказ" 
+            offLabel="Не актвиный заказ" />
+        <div class="flex justify-content-center align-items-center">
+            <p-button 
+                class="p-1"
+                label="Поиск"
+             />
+            <p-button 
+                class="p-1"
+                label="Сброс" />
+        </div>
+    </div>
+</p-card>
+
