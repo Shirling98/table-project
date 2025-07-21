@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TableComponent } from './tables/components/table/table.component';
 import { FilterComponent } from './tables/components/filter/filter.component';
 import { FormsModule } from '@angular/forms';
+import { AlertComponent } from './tables/components/alert/alert.component';
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     TableComponent,
     FilterComponent,
-    FormsModule
+    FormsModule,
+    AlertComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

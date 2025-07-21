@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { TableService } from './../../services/table.services';
+import { Component, OnDestroy, OnInit, } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -9,7 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ButtonModule } from "primeng/button";
 import { FilterService } from '../../services/filter.service';
-import { IOrder } from '../../interfaces/tableInterfase';
+import { IHttpParams } from '../../interfaces/tableInterfase';
+import { Subject, takeUntil } from 'rxjs';
+import { AlertService } from '../../services/alert.service';
+
 
 
 @Component({
@@ -27,31 +31,61 @@ import { IOrder } from '../../interfaces/tableInterfase';
 ],
   templateUrl: './filter.component.html',
   styleUrl: './filter.component.scss',
-  providers: [FilterService]
 })
-export class FilterComponent {
-  orderNumber: number | null = null;
+export class FilterComponent implements OnDestroy{
+  formFilters!: FormGroup;
+  unsub$ = new Subject<void>();
 
-  searchStr: number | null = null;
-  checked = true;  
-  selectedNodes: any;
-  orderTypes: any = [
+  orderTypes = [ 
+    {value: 'warehouse', label: 'До склада', },
+    {value: 'pickup', label: 'До ПВЗ'},
+    {value: 'door', label: 'До двери'}, 
+    ]
+
+  constructor(private fb: FormBuilder,
+    private tableServices: TableService,
+    private filterServices: FilterService,
+    private alert: AlertService
+  ){
+    this.formFilters= this.fb.group({
+      numOrder: null,
+      typeOfOrder: null,
+      isActive: null
+    })
+  }
+
+  onSubmit() {
+    const formValues = this.formFilters.value;
+    const httpParams: IHttpParams = {
+      numOrder: formValues.numOrder ?? undefined,
+      isActive: formValues.isActive ?? undefined,
+      typeOfOrder: formValues.typeOfOrder?.value ?? undefined
+    };
+    this.tableServices.getSearch(httpParams).pipe(takeUntil(this.unsub$)).subscribe(
       {
-        key: '0',
-        label: 'доставка до склада',
-      },
-      {
-        key: '1',
-        label: 'доставка до двери',
-      },
-      {
-        key: '2',
-        label: 'доставка до пвз',
+      next:  (data) => {
+        this.filterServices.updateResult(data);
+        if(data.length === 0) {
+          this.alert.warning('Заказ не найден')
+        }
       }
-  ];
+    }
+  )
+  }
 
-  constructor(
-    private filterServices: FilterService
-  ){}
+  onReset() {
+    this.formFilters.reset();
+     this.tableServices.getOrders().pipe(takeUntil(this.unsub$)).subscribe({
+      next:  (data) => {
+        this.filterServices.updateResult(data);
+      }
+    })
+  }
+
+
+  ngOnDestroy(){
+  this.unsub$.next();
+  this.unsub$.complete();
+}
 
 }

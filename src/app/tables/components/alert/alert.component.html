@@ -1,0 +1,20 @@
+<div *ngIf="text" class="fixed top-0 right-0 m-3">
+  <div
+    class="p-4 border-round flex align-items-center shadow-3"
+    [ngClass]="{
+      'bg-green-100 text-green-800': type === 'success',
+      'bg-yellow-100 text-yellow-800': type === 'warning',
+      'bg-red-100 text-red-800': type === 'danger'
+    }"
+  >
+    <i 
+      class="m-0" 
+      [ngClass]="{
+        'pi pi-check-circle text-green-700': type === 'success',
+        'pi pi-exclamation-triangle text-yellow-700': type === 'warning',
+        'pi pi-times-circle text-red-700': type === 'danger'
+      }"
+    ></i>
+    <p class="m-0">{{ text }}</p>
+  </div>
+</div>
