@@ -1,5 +1,5 @@
 <p-table [value]="orders" [tableStyle]="{ 'min-width': '50rem' }" selectionMode="single" 
-           (onRowSelect)="onRowClick($event.data)" dataKey="id">
+           (onRowSelect)="onRowClick($event.data)" dataKey="numOrder">
     <ng-template pTemplate="header">
         <tr>
             <th>Номер заказа</th>
@@ -11,20 +11,30 @@
     <ng-template pTemplate="body" let-order>
         <tr [pSelectableRow]="order">
             <td>{{ order.numOrder }}</td>
-            <td>{{ order.typeOfOrder }}</td>
-            <td>{{ order.isActiv  ? 'Активный' : 'Неактивный' }}</td>
+            <td>{{ order.typeOfOrder | translateToRussian}}</td>
+            <td>{{ order.isActive  ? 'Активный' : 'Неактивный' }}</td>
             <td>{{ order.orderContains }}</td>
         </tr>
     </ng-template>
 </p-table>
 
 
- <p-sidebar [(visible)]="sidebarVisible" position="right" styleClass="w-30rem">
-    @if (selectedOrder) {
+ <p-sidebar 
+    [(visible)]="sidebarVisible" 
+    position="right" 
+    styleClass="w-30rem"
+    >
+     @if (selectedOrder) {
         <div class="order-info-line p-d-flex p-ai-center p-p-3">
             <h3 class="text-lg"> Детали заказа </h3>
-           <p class="text-sm">{{selectedOrder.numOrder}} {{selectedOrder.typeOfOrder}} {{selectedOrder.isActiv ? 'Активный' : 'Неактивный'}} {{selectedOrder.orderContains}}</p>
-        </div>
+           
+           <p class="text-sm">
+                {{selectedOrder.numOrder}} 
+                {{selectedOrder.typeOfOrder |translateToRussian}} 
+                {{selectedOrder.isActive ? 'Активный' : 'Неактивный'}} 
+                {{selectedOrder.orderContains}}
+            </p>    
+        
+        </div>     
     }
-      
   </p-sidebar>

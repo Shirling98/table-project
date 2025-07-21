@@ -1,183 +1,184 @@
 {
   "orders": [
     {
+      "id": 1,
       "numOrder": 100324322,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": true,
+      "typeOfOrder": "door",
+      "isActive": true,
       "orderContains": "ручка"
     },
     {
       "numOrder": 100867313,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": false,
+      "typeOfOrder": "warehouse",
+      "isActive": false,
       "orderContains": "тетрадь"
     },
     {
       "numOrder": 100567890,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": true,
+      "typeOfOrder": "pickup",
+      "isActive": true,
       "orderContains": "карандаш"
     },
     {
       "numOrder": 100456789,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": false,
+      "typeOfOrder": "door",
+      "isActive": false,
       "orderContains": "линейка"
     },
     {
       "numOrder": 100345678,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": true,
+      "typeOfOrder": "warehouse",
+      "isActive": true,
       "orderContains": "ластик"
     },
     {
       "numOrder": 100234567,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": false,
+      "typeOfOrder": "pickup",
+      "isActive": false,
       "orderContains": "маркер"
     },
     {
       "numOrder": 100123456,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": true,
+      "typeOfOrder": "door",
+      "isActive": true,
       "orderContains": "ножницы"
     },
     {
       "numOrder": 100987654,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": false,
+      "typeOfOrder": "warehouse",
+      "isActive": false,
       "orderContains": "скотч"
     },
     {
       "numOrder": 100876543,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": true,
+      "typeOfOrder": "pickup",
+      "isActive": true,
       "orderContains": "клей"
     },
     {
       "numOrder": 100765432,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": false,
+      "typeOfOrder": "door",
+      "isActive": false,
       "orderContains": "блокнот"
     },
     {
       "numOrder": 100654321,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": true,
+      "typeOfOrder": "warehouse",
+      "isActive": true,
       "orderContains": "стикеры"
     },
     {
       "numOrder": 100543210,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": false,
+      "typeOfOrder": "pickup",
+      "isActive": false,
       "orderContains": "папка"
     },
     {
       "numOrder": 100432109,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": true,
+      "typeOfOrder": "door",
+      "isActive": true,
       "orderContains": "фломастеры"
     },
     {
       "numOrder": 100321098,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": false,
+      "typeOfOrder": "warehouse",
+      "isActive": false,
       "orderContains": "альбом"
     },
     {
       "numOrder": 100210987,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": true,
+      "typeOfOrder": "pickup",
+      "isActive": true,
       "orderContains": "краски"
     },
     {
       "numOrder": 100109876,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": false,
+      "typeOfOrder": "door",
+      "isActive": false,
       "orderContains": "кисть"
     },
     {
       "numOrder": 100998877,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": true,
+      "typeOfOrder": "warehouse",
+      "isActive": true,
       "orderContains": "пластилин"
     },
     {
       "numOrder": 100887766,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": false,
+      "typeOfOrder": "pickup",
+      "isActive": false,
       "orderContains": "глина"
     },
     {
       "numOrder": 100776655,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": true,
+      "typeOfOrder": "door",
+      "isActive": true,
       "orderContains": "бумага"
     },
     {
       "numOrder": 100665544,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": false,
+      "typeOfOrder": "warehouse",
+      "isActive": false,
       "orderContains": "картон"
     },
     {
       "numOrder": 100554433,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": true,
+      "typeOfOrder": "pickup",
+      "isActive": true,
       "orderContains": "книга"
     },
     {
       "numOrder": 100443322,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": false,
+      "typeOfOrder": "door",
+      "isActive": false,
       "orderContains": "журнал"
     },
     {
       "numOrder": 100332211,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": true,
+      "typeOfOrder": "warehouse",
+      "isActive": true,
       "orderContains": "газета"
     },
     {
       "numOrder": 100221100,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": false,
+      "typeOfOrder": "pickup",
+      "isActive": false,
       "orderContains": "плакат"
     },
     {
       "numOrder": 100110099,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": true,
+      "typeOfOrder": "door",
+      "isActive": true,
       "orderContains": "открытка"
     },
     {
       "numOrder": 100999888,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": false,
+      "typeOfOrder": "warehouse",
+      "isActive": false,
       "orderContains": "конверт"
     },
     {
       "numOrder": 100888777,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": true,
+      "typeOfOrder": "pickup",
+      "isActive": true,
       "orderContains": "папка-скоросшиватель"
     },
     {
       "numOrder": 100777666,
-      "typeOfOrder": "Доставка до двери",
-      "isActiv": false,
+      "typeOfOrder": "door",
+      "isActive": false,
       "orderContains": "файл"
     },
     {
       "numOrder": 100666555,
-      "typeOfOrder": "Доставка до склада",
-      "isActiv": true,
+      "typeOfOrder": "warehouse",
+      "isActive": true,
       "orderContains": "степлер"
     },
     {
       "numOrder": 100555444,
-      "typeOfOrder": "Доставка до пвз",
-      "isActiv": false,
+      "typeOfOrder": "pickup",
+      "isActive": false,
       "orderContains": "скобы для степлера"
     }
   ]

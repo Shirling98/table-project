@@ -1,23 +1,20 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterService {
 
-  orderNumber: number = 0;
-
-   private _searchStr$ = new Subject<any>()
-   searchStr$ = this._searchStr$.asObservable()
+  private _searchRes$ = new Subject();
+  searchRes$ = this._searchRes$.asObservable();
 
   constructor() { }
 
-  updateFilters(newFilters: any): void {
-    this._searchStr$.next(newFilters)
-  }
-
-  resetFilters() {
-    this._searchStr$.next({});
+  updateResult(data: any)  {
+    this._searchRes$.next(data);
   }
 }
+
+
+

@@ -1,30 +1,37 @@
 <p-card class="h-1rem">
-    <div class="flex justify-content-center">
+    <form  [formGroup]="formFilters" class="flex justify-content-center">
         <p-inputNumber 
             class="p-3"
             placeholder="Введите номер заказа"
             inputId="integeronly"
-            [(ngModel)]="orderNumber"
             [useGrouping]="false" 
+            formControlName="numOrder"      
             /> 
     <p-treeSelect
+            [options]="orderTypes"
             class="md:w-20rem w-full p-3" 
             containerStyleClass="w-full" 
-            [options]="orderTypes" 
-            placeholder="Тип заказа" />
+            placeholder="Тип заказа" 
+            formControlName="typeOfOrder"
+            />
     <p-toggleButton 
             class="p-3"
             onLabel="Активный заказ" 
-            offLabel="Не актвиный заказ" />
+            offLabel="Не актвиный заказ" 
+            formControlName="isActive"
+            />
         <div class="flex justify-content-center align-items-center">
             <p-button 
                 class="p-1"
                 label="Поиск"
+                (onClick)="onSubmit()"
              />
             <p-button 
                 class="p-1"
-                label="Сброс" />
+                label="Сброс" 
+                (onClick)="onReset()"
+                />
         </div>
-    </div>
+    </form>
 </p-card>
 
